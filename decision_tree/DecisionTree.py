@@ -100,7 +100,6 @@ class DecisionTree:
 
     """递归创建决策树"""
     def create_tree(self, data_set, labels):
-        print("1")
         # 获取类别列表
         class_list = [example[-1] for example in data_set]
         # 数据集中类别完全相同则停止继续划分,返回类别
