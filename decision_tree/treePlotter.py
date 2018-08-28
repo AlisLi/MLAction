@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+from decision_tree import tree
+
 #解决中文显示问题
 plt.rcParams['font.sans-serif']=['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
@@ -131,12 +133,15 @@ def create_plot(in_tree):
     plt.show()
 
 
+
 def main():
     # create_plot()
     my_tree = retrieve_tree(0)
+    labels = ['no surfacing', 'flippers']
     # print(get_num_leafs(my_tree))
     # print(get_tree_depth(my_tree))
-    create_plot(my_tree)
+    # create_plot(my_tree)
+    print(tree.classify(my_tree, labels, [1, 1]))
 
 if __name__ == '__main__':
     main()

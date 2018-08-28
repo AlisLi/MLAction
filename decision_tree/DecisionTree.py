@@ -1,5 +1,6 @@
 from math import log
 import operator
+import pickle
 
 """普通的决策树"""
 class DecisionTree:
@@ -129,6 +130,16 @@ class DecisionTree:
 
         return my_tree
 
+    """使用pickle存储决策树"""
+    def store_tree(self,input_tree,filename):
+        fw = open(filename,'w')
+        pickle.dump(input_tree,fw)
+        fw.close()
+
+    """读取决策树"""
+    def grad_tree(self,filename):
+        fr = open(filename)
+        return pickle.load(fr)
 
     """创建测试数据集"""
     def create_data_set(self):
